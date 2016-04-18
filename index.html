@@ -76,6 +76,10 @@
             max-width: 300px;
             float:right;
         }
+		
+		.section-caltext h1{
+			margin-top:0;
+		}
         
         .section h1{
             font-size:48px;  
@@ -279,7 +283,7 @@
 <body>
 	<div class="container">
 		<div class="content">
-            <div class="section-intro">
+            <div class="section-intro step1">
                 <div class="section-content">
                     <h1>Hi, I'm Caleb Lewis</h1>
                     <h3>I'm an Android & Full-Stack Engineer.</h3>
@@ -297,7 +301,7 @@
 					</div>
                 </div>
             </div>
-			<div class="section section-caltext">
+			<div class="section section-caltext step2">
                 <div class="wrapper section-content clearfix">
                     <div class="four-nine">
                         <hgroup>
@@ -338,7 +342,7 @@
 			-->
 		</div>
 		
-		<div class="section section-smstagger">
+		<div class="section section-smstagger step3">
 					<div class="wrapper section-content clearfix">
 						<div class="four-nine">
 							<hgroup>
@@ -383,7 +387,20 @@
 		s.style.width = windowWidth + "px";
 		s.style.height = windowHeight - p + "px";
         
-        function makeGradientColor(color1, color2, percent) {
+       function makeGradientColor(color1, color2, percent) {
+		   function hexToRgb(hex) {
+				var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+				return result ? {
+					r: parseInt(result[1], 16),
+					g: parseInt(result[2], 16),
+					b: parseInt(result[3], 16)
+				} : null;
+			}
+			if(typeof color1 !== "object"){
+				color1 = hexToRgb(color1);
+				color2 = hexToRgb(color2);	
+			}
+			
             var newColor = {};
 
             function makeChannel(a, b) {
@@ -399,19 +416,30 @@
                 }
                 return(str);
             }
-
-            newColor.r = makeChannel(color1.r, color2.r);
+			
+            newColor.r = makeChannel(color1['r'], color2['r']);
             newColor.g = makeChannel(color1.g, color2.g);
             newColor.b = makeChannel(color1.b, color2.b);
+			
             newColor.cssColor = "#" +
                     makeColorPiece(newColor.r) +
                     makeColorPiece(newColor.g) +
                     makeColorPiece(newColor.b);
-            return(newColor);}
-
-
-//		document.querySelector(".section-intro h1").style.marginTop = ((window.innerHeight / 2) - document.querySelector(".section-intro h1").offsetHeight) + "px";
-        // document.querySelector(".section-caltext").style.marginTop = windowHeight - s.clientHeight + "px";
+            return(newColor);
+	}
+	// var documentHeight = $(document).height();
+	// var halves = Math.floor(documentHeight/windowHeight) - 1; // subtract 1 because that's how many transitions there will be. 
+	// var colors = ["#9C27B0", "#FFFCF8", "#2196f3"];
+	// $(window).scroll(function(e){
+	// 	var step = 1;
+	// 	var amtScrolled = $(window).scrollTop();
+	// 	if(amtScrolled <= step * windowHeight){
+	// 		var percentBetween = amtScrolled / (step * windowHeight);
+			
+	// 		$('.step' + step).css("background-color", makeGradientColor(colors[step], colors[step - 1], percentBetween).cssColor);
+	// 		$('.step' + (step + 1)).css("background-color", makeGradientColor(colors[step], colors[step - 1], percentBetween).cssColor);
+	// 	}
+	// });
 	</script>
 	<!-- Piwik -->
         <script type="text/javascript">
