@@ -13,10 +13,10 @@
 	<link rel="stylesheet" href="devices.min.css">
     <link rel="stylesheet" href="macbookpro.css">
     <link rel="stylesheet" href="iphone.css">
+	<link rel="stylesheet" href="scrollDownMouseAnimation.css">
 	<style>
 		body{
 			font-family: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
-			background-color: #9C27B0;
 			color:#fff;
 			margin:0;
 			padding:0;
@@ -50,6 +50,7 @@
 		
 		.section-intro{
             text-align: center;
+			background-color: #9C27B0;
 		}
 
         .section-intro h1{
@@ -177,7 +178,7 @@
         /* close commented backslash hack */
 		
 		@media(max-width:1366px){
-			.section-caltext .wrapper{
+			.section-caltext .wrapper, .section-smstagger .wrapper{
 				width: 100%;
 			}
 		}
@@ -193,7 +194,7 @@
 		}
 		
 		@media(max-width:770px){
-			.four-nine, .five-nine, .one-third, .half, .two-third{
+			.section-caltext .four-nine,.section-caltext .five-nine{
 				width:initial;
 				display:block;
 				float:initial;
@@ -213,6 +214,10 @@
 			
 			.iphone{
 				right:205px;
+			}
+			
+			.section-smstagger .nexus5{
+				margin-left:50px;
 			}
 		}
 		
@@ -237,6 +242,37 @@
 			.macbook-container.content{
 				width:100%;
 			}
+			
+			.section-smstagger{
+				padding:30px 0;	
+			}
+			
+			.section-smstagger .nexus5{
+				margin-top:20px;
+				margin-right: 45px;
+			}
+			
+			.section-smstagger hgroup{
+				float:initial;
+				margin:0 auto;
+				text-align: center;
+			}
+			
+			.section-smstagger .half,.section-smstagger .half{
+				width:initial;
+				display:block;
+				float:initial;
+				text-align: center;
+			}
+			
+			.marvel-device.nexus5{
+				padding: 42px 15px 32px 15px;
+				width: 150px;
+    			height: 265px;
+			}
+			.marvel-device.nexus5 .sleep{
+				height:80px;
+			}
 		}
 	</style>
 </head>
@@ -253,6 +289,12 @@
                         <span class="link-item"><a href="CalebLewisResume.pdf">resumes</a></span>
                         <span class="link-item"><a href="mailto:hello@caleblewis.me?subject=Website Inquery">contact</a></span>
                     </h5>
+					<div class="scroll-down svg" id="home-scroll-down">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_2" x="0px" y="0px" viewBox="0 0 25.166666 37.8704414" enable-background="new 0 0 25.166666 37.8704414" xml:space="preserve">
+							<path class="stroke" fill="none" stroke="#c7c4b8" stroke-width="2.5" stroke-miterlimit="10" d="M12.5833445 36.6204414h-0.0000229C6.3499947 36.6204414 1.25 31.5204487 1.25 25.2871208V12.5833216C1.25 6.3499947 6.3499951 1.25 12.5833216 1.25h0.0000229c6.2333269 0 11.3333216 5.0999947 11.3333216 11.3333216v12.7037992C23.916666 31.5204487 18.8166714 36.6204414 12.5833445 36.6204414z"></path>
+							<path class="scroller" fill="#c7c4b8" d="M13.0833359 19.2157116h-0.9192753c-1.0999985 0-1.9999971-0.8999996-1.9999971-1.9999981v-5.428606c0-1.0999994 0.8999987-1.9999981 1.9999971-1.9999981h0.9192753c1.0999985 0 1.9999981 0.8999987 1.9999981 1.9999981v5.428606C15.083334 18.315712 14.1833344 19.2157116 13.0833359 19.2157116z"></path>
+						</svg><i class="icon icon-arrow-down"></i>
+					</div>
                 </div>
             </div>
 			<div class="section section-caltext">
@@ -323,6 +365,11 @@
 	<script>
 		var windowHeight = $(window).height();
 		var windowWidth = $(window).width();
+		
+		if(windowWidth <= 770){
+			$('.section-smstagger .four-nine').removeClass("four-nine").addClass("half");
+			$('.section-smstagger .five-nine').removeClass("five-nine").addClass("half");
+		}
 		
         var sections = document.querySelectorAll(".section");
         for(var i = 0; i < sections.length; i++){
