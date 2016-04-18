@@ -3,40 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1,height=device-height">
+	<!--<meta name="viewport" content=", maximum-scale=1">-->
 	
-	<title>Android Developer | Back-End Developer | Hacker - Caleb Lewis</title>
+	<title>Android Developer | Back-End Developer - Caleb Lewis</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,200,100" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" href="macbookpro.css">
+    <link rel="stylesheet" href="iphone.css">
 	<style>
 		body{
 			font-family: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
 			/*background-color: #F9FBFD;*/
 			background-color: #4B99E6;
 			color:#fff;
-			margin:0 10px;
+			margin:0;
 			padding:0;
+            /*position: relative;*/
 		}
-		
+
 		h1{
-			font-weight: 100;
 			font-size:40px;
-			margin-top: 0;
+			margin:32px 0
 		}
-		
+
 		h3{
 			font-size:25px;
-			font-weight: 400;
-			color: #79C1FF;
 		}
-		
-		h5{
-			margin-bottom:0;
-		}
-		
-		
+
 		.link-item{
-			visibility: hidden;
+			/*visibility: hidden;*/
 			margin-right:20px;
 			display: inline-block;
 		}
@@ -51,46 +48,284 @@
 			margin-right:0;
 		}
 		
-		.content{
-			text-align: center;
+		.section-intro{
+            text-align: center;
+		}
+
+        .section-intro h1{
+            font-weight: 100;
+            margin-top: 0;
+        }
+
+        .section-intro h3{
+            font-weight: 400;
+            color: #79C1FF;
+        }
+
+        .section-intro h5{
+            margin-bottom:0;
+        }
+
+        .section-caltext{
+            background-color:#FFFCF8;
+            color:#777;
+        }
+        
+        .section-caltext hgroup{
+            max-width: 300px;
+            float:right;
+        }
+        
+        .section h1{
+            font-size:48px;  
+            margin-bottom: 2px; 
+        }
+        
+        .section h3{
+            margin-top:2px;
+            font-weight: 100;
+        }
+		
+		.section{
+			font-weight: 300;
+		}
+		
+		.section a{
+			color:inherit;
+			text-decoration: none;
+		}
+		
+		.section a:hover{
+			color:#000;
+		}
+		
+        .section .section-content{
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        
+        .half{
+            float:left;
+            width:50%;
+        }
+        
+        .one-third{
+            float:left;
+            width:33.33333%;
+            position: relative;
+        }
+        
+        .two-third{
+            float:left;
+            width: 66.6666666%;
+            position: relative;
+        }
+		
+		.four-nine{
+			float:left;
+			width:44.44444%;
+		}
+		
+		.five-nine{
+			float:left;
+			width:55.555555%;
+		}
+        
+        .wrapper{
+            width:80%;
+            margin:0 auto;
+        }
+        
+        .iphone{
+            position:absolute;
+            bottom:0;
+            right:290px;
+        }
+        
+        .clearfix:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0;
+            }
+        .clearfix { display: inline-block; }
+        /* start commented backslash hack \*/
+        * html .clearfix { height: 1%; }
+        .clearfix { display: block; }
+        /* close commented backslash hack */
+		
+		@media(max-width:1366px){
+			.section-caltext .wrapper{
+				width: 100%;
+			}
+		}
+		
+		@media(max-width:1024px){
+			.macbook-container.content{
+				width: 100%;
+			}
+			
+			.iphone{
+				right:100px;
+			}
+		}
+		
+		@media(max-width:770px){
+			.four-nine, .five-nine, .one-third, .half, .two-third{
+				width:initial;
+				display:block;
+				float:initial;
+			}
+			
+			.section-caltext hgroup{
+				float:initial;
+				margin:0 auto;
+				text-align: center;
+			}
+			
+			.macbook-container.content{
+				width:73%;
+				margin:0 auto;
+				margin-top:20px;
+			}
+			
+			.iphone{
+				right:205px;
+			}
+		}
+		
+		@media(max-width:435px){
+			.macbook-container .macscreen{
+				height:200px;
+			}
+			
+			.macbook-container .macscreenwrap{
+				width:69%;
+			}
+			
+			#device{
+				width: 5.592em;
+    			height: 11.058em;
+			}
+			
+			.iphone{
+				right:74px;
+			}
+			
+			.macbook-container.content{
+				width:100%;
+			}
 		}
 	</style>
 </head>
 <body>
 	<div class="container">
 		<div class="content">
-			<h1>Hi, I'm Caleb Lewis</h1>
-			<h3>I'm an Android & Back-End Engineer. And Hacker.</h3>
-			<h5 class="link-item-list">
-				<span class="link-item"><a href="http://blog.caleblewis.me">blog</a></span>
-				<span class="link-item"><a href="http://github.com/calebdre">github</a></span>
-				<span class="link-item"><a href="CalebLewisResume.pdf">resume</a></span>
-				<span class="link-item"><a href="mailto:hello@caleblewis.me?subject=Website Inquery">contact</a></span>
-			</h5>
+            <div class="section-intro">
+                <div class="section-content">
+                    <h1>Hi, I'm Caleb Lewis</h1>
+                    <h3>I'm an Android & Full-Stack Engineer.</h3>
+                    <h5 class="link-item-list">
+                        <span class="link-item"><a href="http://blog.caleblewis.me">blog</a></span>
+                        <span class="link-item"><a href="http://github.com/calebdre">github</a></span>
+                        <span class="link-item"><a href="CalebLewisResume.pdf">resumes</a></span>
+                        <span class="link-item"><a href="mailto:hello@caleblewis.me?subject=Website Inquery">contact</a></span>
+                    </h5>
+                </div>
+            </div>
+			<div class="section section-caltext">
+                <div class="wrapper section-content clearfix">
+                    <div class="four-nine">
+                        <hgroup>
+                            <h1>Caltext</h1>
+                            <h3>Manage your calendar through text messages</h3>
+							<p><a href="http://caltext.co"> check it out &nbsp; <i class="fa fa-long-arrow-right"></i></a></p>    
+                        </hgroup>
+                    </div>
+                    <div class="five-nine">
+                        <div class="macbook-container content">
+                            <div class="macscreenwrap">
+                                <span class="camera"></span>
+                                <div class="macscreen">
+                                    <img src="caltext-desktop.png" alt="">
+                                </div>
+                            </div>
+                            <div class="keypadtop">
+                                <div class="keyhold"></div>
+                                <div class="speaker"></div>
+                            </div>
+                            <div class="keypadbottom">  </div>
+                       </div>
+                       
+                        <div id="device" class="iphone">
+                            <div id="devicetop" class="iphone-speaker"></div>
+                            <div id="screen" class="iphone-screen">
+                                <img src="caltext-mobile.png" alt="">
+                            </div>
+                            <div id="button">
+                                <div id="button-square"></div>
+                            </div>
+                        </div>
+                </div>
+            </div>
 			<!--
 				PORTFOLIO: 
 				http://claratudela.com/
 			-->
 		</div>
 	</div>
-	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
 	<script>
-		var linkItems = document.querySelectorAll(".link-item");
-		var counter = 0;
+		var windowHeight = $(window).height();
+		var windowWidth = $(window).width();
 		
-		function animate(){
-			if(counter >= linkItems.length){return;}
-			linkItems[counter].style.visibility = "visible";
-			linkItems[counter].className = linkItems[counter].className + " animated fadeInUpBig";
-			
-			counter++;
-			setTimeout(animate, counter + 1 * 450);
-		}
+        var sections = document.querySelectorAll(".section");
+        for(var i = 0; i < sections.length; i++){
+            sections[i].style.height = windowHeight + "px";
+        }
 		
-		animate();
 		
-		var content = document.querySelector(".content");
-		content.style.marginTop = ((window.innerHeight / 2) - content.offsetHeight) + "px";
+		var s = document.querySelector(".section-intro");
+		var p = (windowHeight / 2) - s.clientHeight;
+		s.style.paddingTop = p + "px";
+		s.style.width = windowWidth + "px";
+		s.style.height = windowHeight - p + "px";
+        
+        function makeGradientColor(color1, color2, percent) {
+            var newColor = {};
+
+            function makeChannel(a, b) {
+                return(a + Math.round((b-a)*(percent/100)));
+            }
+
+            function makeColorPiece(num) {
+                num = Math.min(num, 255);   // not more than 255
+                num = Math.max(num, 0);     // not less than 0
+                var str = num.toString(16);
+                if (str.length < 2) {
+                    str = "0" + str;
+                }
+                return(str);
+            }
+
+            newColor.r = makeChannel(color1.r, color2.r);
+            newColor.g = makeChannel(color1.g, color2.g);
+            newColor.b = makeChannel(color1.b, color2.b);
+            newColor.cssColor = "#" +
+                    makeColorPiece(newColor.r) +
+                    makeColorPiece(newColor.g) +
+                    makeColorPiece(newColor.b);
+            return(newColor);}
+
+
+//		document.querySelector(".section-intro h1").style.marginTop = ((window.innerHeight / 2) - document.querySelector(".section-intro h1").offsetHeight) + "px";
+        // document.querySelector(".section-caltext").style.marginTop = windowHeight - s.clientHeight + "px";
 	</script>
 	<!-- Piwik -->
         <script type="text/javascript">

@@ -1,0 +1,72 @@
+.macbook-container.content {
+  width: 75%;
+}
+
+
+.macbook-container .macscreenwrap {
+  background:#373435;
+  width:69%;
+  border-top-right-radius:13px;
+  border-top-left-radius:13px;
+  padding:15px;
+  position:relative;
+  margin:0 auto;
+}
+
+.macbook-container .macscreen {
+  width:100%;
+  height:270px;
+  background:#4b4b4d;
+}
+
+.macbook-container .macscreen img{
+	height:100%;
+	width:100%;
+}
+
+.macbook-container .camera {
+  background:#7c7b7b;
+  border-radius:100%;
+  width:5px;
+  height:5px;
+  display:block;
+  position:absolute;
+  left:50%;
+  top:5px;
+}
+
+
+.macbook-container .keypadtop {
+  background:#e6e7e8;
+  width:90%;
+  height:25px;
+  margin:0 auto;
+}
+
+.macbook-container .keyhold {
+  background:#a9abae;
+  width:77px;
+  height:8px;
+  border-bottom-right-radius:5px;
+  border-bottom-left-radius:5px;
+  margin:0 auto;
+  box-shadow: inset 0 -1px 0px #9f9f9f;
+}
+
+.macbook-container .speaker {
+  position:relative;
+  float:right;
+  margin-right:20px;
+  margin-top:0px;
+  background:#c0c0c0;
+  border-radius:5px;
+  width:20px;
+  height:5px;
+}
+
+.macbook-container .keypadbottom {
+width:547px;
+height:25px;
+perspective:550;
+  margin:0 auto;
+}
